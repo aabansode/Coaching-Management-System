@@ -18,3 +18,6 @@ Route::get('/', function () {
 
 Route::get('/add_info', 'StudentController@index');
 Route::post('/test', 'StudentController@info_add');
+
+
+Route::get('/a', 'HomeController@index');
