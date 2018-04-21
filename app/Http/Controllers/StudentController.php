@@ -14,7 +14,22 @@ class StudentController extends Controller
 
     function info_add(Request $request)
     {
-        $student = Student::create($request->all());
+        $this->validate($request, [
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $imageDir = 'images';
+        $imageName = time() . '.' . $request->image->getClientOriginalExtension();
+        $request->image->move(public_path($imageDir), $imageName);
+
+        $student = new Student;
+        $student->name = $request->name;
+        $student->roll = $request->roll;
+        $student->class = $request->class;
+        $student->phone_number = $request->phone_number;
+        $student->image = $imageDir . '/' . $imageName;
+
+        $student->save();
 
         echo "saved successfully";
 

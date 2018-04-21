@@ -5,16 +5,16 @@
 @endsection
 
 @section('OuterInclude')
-    <link  href="{{ asset('css/style.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
-    @endsection
+
+    {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--}}
+@endsection
 
 @section('ContentOfBody')
     <h1>Hello</h1>
 
 
     <div class="row">
-        <div class="span4"></div>
+        <div class="span6"></div>
         <div class="span6">
             <div class="well">
                 <h5>Add items</h5><br/>
